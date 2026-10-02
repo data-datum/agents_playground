@@ -1,141 +1,101 @@
 # 🤖 Agents Playground
 
-A hands-on playground for learning and experimenting with **LLM agents, agentic workflows, ReAct, and multi-agent systems** using different frameworks.
+A hands-on repository exploring **LLM agents, tool integration, multi-agent systems, and agent orchestration** using Python and different frameworks.
 
-The repository contains practical examples developed while exploring how modern AI agents are designed, orchestrated, and implemented with Python.
+The goal of this project is to understand how agentic systems work under the hood, experiment with different architectural patterns, and explore the trade-offs between frameworks and implementation approaches.
 
-## 📚 Contents
+Rather than focusing on a single framework, this playground follows a progressive, practical approach — from building basic LLM agents to exploring multi-agent architectures, tool interoperability, and more advanced agentic workflows.
 
-The repository currently includes examples covering different approaches to building AI agents:
+## 📚 Notebooks
 
-### 🔹 LangChain Agent
+The repository is organized into Jupyter notebooks, each exploring a specific concept or architectural approach.
 
-`Agent_LangChain.ipynb`
-
-Introduction to building an agent with **LangChain**, including:
-
-* LLM-based agents
-* Tools
-* Agent execution
-* Tool calling
-* Agent interaction with external capabilities
-
-### 🔹 ReAct Agent
-
-`Agent_ReAct.ipynb`
-
-Implementation and exploration of the **ReAct (Reasoning + Acting)** paradigm.
-
-The notebook demonstrates how an agent can:
-
-1. Analyze a task
-2. Decide which action to take
-3. Use a tool
-4. Observe the result
-5. Continue reasoning based on the observation
-6. Produce a final answer
-
-### 🔹 Multi-Agent Systems with CrewAI
-
-`MultiAgents_CrewAI.ipynb`
-
-Introduction to **multi-agent architectures** using CrewAI.
-
-The example explores how multiple specialized agents can collaborate through:
-
-* Agents with different roles
-* Tasks
-* Agent delegation
-* Sequential workflows
-* Multi-agent orchestration
+| Notebook                                                   | Description                                                                                                                              | Key concepts                                                         |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [Agent_LangChain.ipynb](Agent_LangChain.ipynb)             | Introduction to building LLM agents with LangChain. Explores how language models interact with tools and execute actions.                | LLM agents, tool calling, agent execution                            |
+| [Agent_ReAct.ipynb](Agent_ReAct.ipynb)                     | Implements the ReAct (Reasoning + Acting) paradigm, illustrating the iterative interaction between reasoning, actions, and observations. | ReAct, reasoning and acting, agent loops                             |
+| [MultiAgents_CrewAI.ipynb](MultiAgents_CrewAI.ipynb)       | Explores multi-agent systems with CrewAI, using specialized agents that collaborate to complete tasks.                                   | Agent roles, tasks, delegation, sequential workflows                 |
+| [MultiAgents_LangGraph.ipynb](MultiAgents_LangGraph.ipynb) | Experiments with multi-agent orchestration and graph-based workflows using LangGraph.                                                    | Graph-based orchestration, routing, state, agent coordination        |
+| [Tools_MCP.ipynb](Tools_MCP.ipynb)                         | Explores tool integration and the Model Context Protocol (MCP), including how agents can discover and use external capabilities.         | Custom tools, MCP, client-server architecture, tool interoperability |
 
 ## 🧠 Concepts Explored
 
-This playground is focused on understanding the concepts behind agentic AI systems rather than simply using a framework.
+This repository investigates several fundamental building blocks of agentic AI systems:
 
-Some of the main topics explored are:
+* **LLM Agents:** Connecting language models with tools and execution loops.
+* **ReAct:** Combining reasoning and acting through iterative interaction.
+* **Tool Calling:** Enabling LLMs to interact with external functions and services.
+* **Model Context Protocol (MCP):** Exploring a standardized way to expose and consume tools and other contextual capabilities.
+* **Multi-Agent Systems:** Designing systems where specialized agents collaborate on complex tasks.
+* **Agent Orchestration:** Coordinating agents, managing execution flows, and exploring graph-based architectures.
+* **State and Memory:** Understanding how agentic applications maintain context and manage information across interactions.
+* **Framework Comparison:** Exploring different abstractions and architectural trade-offs across agent frameworks.
 
-* **LLMs and tool calling**
-* **AI Agents**
-* **ReAct**
-* **Reasoning and Acting**
-* **Agent memory and state**
-* **Tool use**
-* **Agent orchestration**
-* **Multi-agent systems**
-* **Agent specialization**
-* **Sequential and hierarchical workflows**
-* **Framework comparison**
+## 🛠️ Frameworks and Technologies
 
-## 🛠️ Frameworks
-
-The examples currently explore:
-
-| Framework                               | Focus                                |
-| --------------------------------------- | ------------------------------------ |
-| [LangChain](https://www.langchain.com/) | Building LLM applications and agents |
-| [CrewAI](https://www.crewai.com/)       | Multi-agent orchestration            |
-| ReAct                                   | Reasoning + Acting agent pattern     |
-
-The goal is to experiment with different abstractions and understand the trade-offs between frameworks and architectural approaches.
+| Framework / Technology | Focus                                                              |
+| ---------------------- | ------------------------------------------------------------------ |
+| **LangChain**          | Building LLM applications, agents, and tool integrations           |
+| **CrewAI**             | Multi-agent collaboration and task orchestration                   |
+| **LangGraph**          | Stateful, graph-based agent workflows and orchestration            |
+| **MCP**                | Standardized communication between applications and external tools |
+| **Python**             | Implementation and experimentation                                 |
+| **Jupyter Notebooks**  | Interactive learning and prototyping                               |
 
 ## 🚀 Getting Started
 
-Clone the repository:
+### Clone the repository
 
 ```bash
 git clone https://github.com/data-datum/agents_playground.git
 cd agents_playground
 ```
 
-Install the required dependencies according to the notebooks you want to run.
+### Set up the environment
 
-The notebooks can be opened with **Jupyter Notebook**, **JupyterLab**, or **Google Colab**.
+Create a virtual environment and install the dependencies required by the notebook you want to run.
 
 ```bash
-jupyter notebook
+python -m venv .venv
 ```
 
-## 🔑 Environment Variables
+Activate the environment:
 
-Some examples require API access to an LLM provider.
+```bash
+# Linux / macOS
+source .venv/bin/activate
 
-Create a `.env` file and add the required credentials, for example:
+# Windows
+.venv\Scripts\activate
+```
+
+Install the relevant packages according to each notebook's requirements.
+
+### Configure API keys
+
+Some notebooks require access to an LLM provider.
+
+Create a `.env` file in the project directory and add the credentials required by your chosen provider.
 
 ```env
 OPENROUTER_API_KEY=your_api_key
 ```
 
-> Never commit API keys or other secrets to the repository.
+Never commit API keys or other sensitive credentials to the repository.
 
-## 🎯 Purpose
+### Run the notebooks
 
-This repository is part of an ongoing exploration of **Generative AI and Agentic AI**, with a particular focus on understanding how LLMs evolve from simple chat interfaces into systems capable of:
+Open the notebooks using Jupyter Notebook, JupyterLab, or Google Colab.
 
-**Reasoning → Planning → Using Tools → Observing Results → Taking Further Actions**
+```bash
+jupyter notebook
+```
 
-The playground is intentionally experimental and educational. Examples may evolve as new agent frameworks, models, and orchestration patterns are explored.
+Each notebook is designed to be explored independently, although following the suggested learning progression can provide a more structured understanding of agentic systems.
 
-## 🗺️ Roadmap
+## 🗺️ Learning Path
 
-Possible future experiments include:
-
-* [ ] LangGraph agents
-* [ ] Supervisor-based multi-agent architectures
-* [ ] Agent state and persistence
-* [ ] Memory systems
-* [ ] Structured outputs
-* [ ] MCP (Model Context Protocol)
-* [ ] Agent evaluation
-* [ ] Human-in-the-loop workflows
-* [ ] Parallel agent execution
-* [ ] Different LLMs and model routing
-* [ ] Comparison of agent frameworks
-* [ ] Production-oriented agent architectures
-
-## 📖 Learning Approach
-
-The repository follows a progression from simpler to more complex architectures:
+The notebooks explore different levels of abstraction and complexity in agentic systems.
 
 ```text
 LLM
@@ -147,19 +107,55 @@ LLM + Tools
 Agent
  │
  ▼
-ReAct Agent
+ReAct
  │
  ▼
-Multi-Agent System
+Tool Integration and MCP
+ │
+ ▼
+Multi-Agent Systems
  │
  ▼
 Agent Orchestration
  │
  ▼
-Advanced Agentic Systems
+Advanced Agentic Workflows
 ```
 
-Each notebook is intended to be both an experiment and a learning resource.
+This progression is conceptual rather than strictly linear. Tool integration, orchestration, and multi-agent architectures can be combined in different ways depending on the application.
+
+## 🔬 Project Scope
+
+This is an ongoing educational and experimental project focused on understanding the principles behind agentic AI.
+
+The notebooks prioritize hands-on implementation and conceptual exploration over production-ready solutions.
+
+The main objectives are to:
+
+* Understand the internal mechanisms behind LLM-based agents.
+* Explore how agents interact with tools and external systems.
+* Compare different approaches to multi-agent collaboration and orchestration.
+* Experiment with emerging protocols and frameworks.
+* Build a foundation for more advanced applications involving retrieval, memory, evaluation, and autonomous workflows.
+
+## 🛣️ Roadmap
+
+Future experiments may include:
+
+* [ ] RAG-based agents
+* [ ] Agent memory and persistent state
+* [ ] Supervisor-based multi-agent architectures
+* [ ] Structured outputs and constrained generation
+* [ ] Agent evaluation and observability
+* [ ] Human-in-the-loop workflows
+* [ ] Parallel execution and advanced routing
+* [ ] Model selection and routing strategies
+* [ ] Production-oriented agent architectures
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
 
 ## 📄 License
 
